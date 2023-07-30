@@ -2,26 +2,28 @@
 public class Application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//declare rational numbers
-		RationalNumber r1 = new RationalNumber(5,4);
-		RationalNumber r2 = new RationalNumber(4,5);
-		RationalNumber r3 = new RationalNumber(7,7);
-		RationalNumber r4 = new RationalNumber(5,5);
-		RationalNumber r5 = new RationalNumber(10,8);
-		RationalNumber r6= new RationalNumber(164,57);
-		RationalNumber r7 = new RationalNumber(164,57);
 		
+		Status status = Status.NOT_STARTED;
+		Task t = new Task("Appointment", 5, status);
+		System.out.println(t.toString());
+		t.setPriority(5);
+		System.out.println(t.toString());
 		
-		//test rational numbers
-		System.out.println(r1.compareTo(r2));
-		System.out.println(r2.compareTo(r3));
-		System.out.println(r3.compareTo(r2));
-		System.out.println(r3.compareTo(r4));
-		System.out.println(r1.compareTo(r5));
-		System.out.println(r6.compareTo(r7));
-		System.out.println(r4.compareTo(r7));
+		Process p = new Process("541th", 1);
+		System.out.println(p.getPriority());
+		System.out.println(p.toString());
+		Process b = new Process("432t", 10);
+		System.out.println(p.compareTo(b));
+		System.out.println(b.compareTo(p));
 		
+		Task c = new Task("Hair Cut", 5, status);
+		System.out.println(c.compareTo(t));
+		System.out.println(t.compareTo(c));
+		t.setPriority(10);
+		System.out.println(c.compareTo(t));
+		System.out.println(t.compareTo(c));
+		
+
 	}//end main
 
-}//end application
+}//end class
